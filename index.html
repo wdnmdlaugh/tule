@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/pixi.min.js"></script>
+    <script>
+		var app = new PIXI.Application(1440,900);
+        document.body.appendChild(app.view);
+        
+        var bg = new PIXI.Sprite.fromImage("res/10.png");
+        bg.width=1440;
+        bg.height=900;
+		app.stage.addChild(bg);
+		bg.visible = true;
+		
+		var bg1 = new PIXI.Sprite.fromImage("res/9.png");
+		bg1.x = 150;
+		bg1.height = 900;
+		
+		app.stage.addChild(bg1);
+		bg1.visible = true;
+		
+		
+		var an =new PIXI.Sprite.fromImage("res/a.png");
+		app.stage.addChild(an);
+		an.x = 100;
+		an.y = 600;
+		an.width = 125;
+		an.height = 40;
+		 
+		
+		var score = new PIXI.Text("龙井历史");
+			score.x = 105;
+			score.y = 605;
+		app.stage.addChild(score);
+		
+		
+		an.interactive = true;
+		an.on("click",move);
+		function move() {
+		   var score1 = new PIXI.Text("西湖龙井茶历史悠久，最早可追溯到中国唐代，当时著名的茶圣陆羽，至，取水挹幽窦。");
+		   	score1.x = 200;
+		   	score1.y = 300;
+		   app.stage.addChild(score1);
+		}
+		
+    </script>
+</body>
+</html>
